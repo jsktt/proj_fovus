@@ -3,7 +3,7 @@ This readme will have instructions to set-up, and run the code.
 
 ## Uploading inputfile to S3 Bucket.
 
-![.png failed to load](gui.png)
+![.png failed to load](png/gui.png)
 Through the interactive GUI, a file named info.txt will be  downlaoded to the hosts download folder.
 
 1. In the S3 AWS Console page, create a bucket, with the option to block all public access on.
@@ -43,7 +43,7 @@ input_file_path: bucketName/inputfile.txt
 ```
 On top of those, I also included the AWS managed policies: AmazonDynamoDBFullAccess, AmazonS3ReadOnlyAccess.
 5. Going back to the AWS Lambda Console page, copy the index.js code to the code source window, and deploy. I created a test environment to make sure that the code works, as shown below in the image. 
-![.png failed to load](lambda.png)
+![.png failed to load](png/lambda.png)
 
 ## EC-2 Instance and a trigger script.
 
@@ -65,7 +65,7 @@ As the requirements asks for no hard codes, the variable BUCKET_NAME can be init
 10. Download the script from S3: ```aws s3 cp s3://your_bucket_name/script.py-path /home/ec2-user/script.py```
 11. Execute the script: ```python3 /home/ec2-user/script.py```
 12. Like shown below image, the code executes, and a new output.txt can be found through the DynamoDB table. 
-
+13. make sure to DynamoDB->tables->DynamoDB stream details -> turn on stream status in order to capture any changes being made to the table. 
 
 
 ## REFERENCES:
