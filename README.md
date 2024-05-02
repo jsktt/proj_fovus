@@ -64,3 +64,16 @@ As the requirements asks for no hard codes, the variable BUCKET_NAME can be init
 
 10. Download the script from S3: ```aws s3 cp s3://your_bucket_name/script.py-path /home/ec2-user/script.py```
 11. Execute the script: ```python3 /home/ec2-user/script.py```
+12. Like shown below image, the code executes, and a new output.txt can be found through the DynamoDB table. 
+
+
+
+## REFERENCES:
+IAM roles to Lambda: https://aws.amazon.com/blogs/security/how-to-create-an-aws-iam-policy-to-grant-aws-lambda-access-to-an-amazon-dynamodb-table/
+Nanoid: https://github.com/ai/nanoid 
+Policy Troubleshooting: https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_policies.html?icmpid=docs_iam_console#policy-summary-not-grant-permissions
+Stream reading: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Request.html#createReadStream-property
+S3, to invoking lambda functions: https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html
+Accessing VM without SSH: https://balramchavan.medium.com/connect-to-ec2-via-aws-session-manager-and-without-ssh-inbound-rule-f9f9e25c4345
+Routes integeration for DynamoDB: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html#http-api-dynamo-db-create-table
+
