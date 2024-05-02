@@ -16,9 +16,12 @@ input_file_path: bucketName/inputfile.txt
 ## Upload file to DynamoDB via API gateway and Lambda Function.
 
 1. In order to save the file to DynamoDB, first create a table in the DynamoDB Console page in AWS, and call it FileTable.
-2. In the API gateway page in AWS Console, go to Routes page accessed at the left side bar, and implement the following routes.
+2. In the AWS Lambda Console Page, create a new function, I have named it file-function.
+3. In the API gateway page in AWS Console, go to Routes page accessed at the left side bar, and implement the following routes.
   - /items -> POST
   - /items/{id} -> GET, PUT, DELETE
+4. To make sure they are integerated to AWS Lambda, go to the integerations page acced through the left side bar. Click on any route, and attach it to your Lambda function.
+5. Going back to the AWS Lambda Console page, copy the index.js code to the code source window, and deploy. I created a test environment to make sure that the code works, as shown below in the image. 
 ![.png failed to load](lambda.png)
-In the AWS Lambda Console Page, create a new function, I have named it file-function.
-By copying the index.js that I created in the Lambda console function in on the AWS, the file can succesfully be saved to DynamoDB FileTable
+
+
